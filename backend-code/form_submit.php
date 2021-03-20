@@ -20,7 +20,7 @@
     $sql1 = "INSERT INTO vendor_rfp values('$vendorid','$id','$res_id')";
     mysqli_query($db,$sql1);
 
-    $sql2 = "INSERT INTO rfp_status values('$res_id','$cost','$start','$end','$del')";
+    $sql2 = "INSERT INTO rfp_status values('$res_id','$cost','$start','$end','$del','')";
     mysqli_query($db,$sql2);
 
     header("location: ../frontend-code/public/vendor/openrfp.php");

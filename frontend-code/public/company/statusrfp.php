@@ -19,7 +19,7 @@
     <?php 
     require '../../../backend-code/config.php';
     $rfp_id=$_GET['rfp_id'];
-    $sql="SELECT vendor_rfp.Vendor_ID,vendor.Username,rfp_status.Cost,rfp_status.Start_date,rfp_status.End_date,rfp_status.Del_mode,rfp_status.company_price,rfp_status.Response_ID FROM vendor JOIN vendor_rfp ON vendor.ID=vendor_rfp.Vendor_ID JOIN rfp_status ON vendor_rfp.Response_ID=rfp_status.Response_ID ";
+    $sql="SELECT vendor_rfp.Vendor_ID,vendor.Username,rfp_status.Cost,rfp_status.Start_date,rfp_status.End_date,rfp_status.Del_mode,rfp_status.company_price,rfp_status.Response_ID FROM vendor JOIN vendor_rfp ON vendor.ID=vendor_rfp.Vendor_ID JOIN rfp_status ON vendor_rfp.Response_ID=rfp_status.Response_ID WHERE vendor_rfp.Rfp_ID='$rfp_id' ";
     $result=mysqli_query($db,$sql);
     ?>
 
