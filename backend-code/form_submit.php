@@ -23,6 +23,9 @@
     $sql2 = "INSERT INTO rfp_status values('$res_id','$cost','$start','$end','$del','')";
     mysqli_query($db,$sql2);
 
+    $sql3 = "INSERT INTO status values('$res_id','Negotiate')";
+    mysqli_query($db,$sql3);
+
     header("location: ../frontend-code/public/vendor/openrfp.php");
 
 ?>
