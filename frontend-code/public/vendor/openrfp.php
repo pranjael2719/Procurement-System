@@ -26,7 +26,7 @@
   
         </ul>
   
-        <a href="logout.html" class="btn btn-outline-danger sign-out"> Sign out </a>
+        <a href="../../../backend-code/signout.php" class="btn btn-outline-danger sign-out"> Sign out </a>
   
       </div>
     </nav>
