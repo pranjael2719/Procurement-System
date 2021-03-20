@@ -40,7 +40,7 @@
 			->Status 
 				-> people who current have placed their bid 
 				-> Negotiating price (quoting text field )
-				-> Acceptance button for the currnt quote
+				-> Acceptance button for the current quote
 
 Website main page will have the RFP 
 Vendor login system into the company's website 
