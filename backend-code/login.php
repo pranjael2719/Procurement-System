@@ -8,7 +8,7 @@ require_once "config.php";
         $mypassword = $_POST['password'];
         $role = $_POST['category'];
         if($role =="company"){
-            $sql = "SELECT ID FROM $company  WHERE Username ='$myusername' and Password='$mypassword' ";
+            $sql = "SELECT ID FROM company  WHERE Username ='$myusername' and Password='$mypassword' ";
             $result = mysqli_query($db,$sql);
             $count = mysqli_num_rows($result);
             if($count ==1){
