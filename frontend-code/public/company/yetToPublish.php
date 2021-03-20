@@ -20,10 +20,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active disabled">
-            <a class="nav-link" href="yetToPublish.html"> Yet to Publish <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="yetToPublish.php"> Yet to Publish <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="publishedrfp.html"> Published RFP </a>
+            <a class="nav-link" href="publishedrfp.php"> Published RFP </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="acceptedrfp.html"> Accepted RFP </a>

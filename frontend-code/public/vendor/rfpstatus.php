@@ -45,14 +45,20 @@
     $responseid = $row2['Response_ID'];
     $rfpid=$row2['Rfp_ID'];
 
-    $sql4= "SELECT product_name FROM company_rfp WHERE Rfp_ID='$rfpid'";
+    $sql4= "SELECT product_name,Company_ID FROM company_rfp WHERE Rfp_ID='$rfpid'";
     $result4=mysqli_query($db,$sql4);
     $row4 = mysqli_fetch_assoc($result4);
 
     $productname = $row4['product_name'];
+    $companyid = $row4['Company_ID'];
 
     $sql3 = "SELECT * FROM rfp_status WHERE Response_ID='$responseid'";
     $result3  = mysqli_query($db,$sql3);
+
+    $sql4 = "SELECT Status FROM status WHERE Response_ID='$responseid'";
+    $result4  = mysqli_query($db,$sql4);
+    $row4 = mysqli_fetch_assoc($result4);
+
     while($row3 = mysqli_fetch_assoc($result3)){
 
     
@@ -62,7 +68,7 @@
       <table class="table table-striped">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">Company ID</th>
             <th scope="col">Product Name</th>
             <th scope="col">Start Date</th>
             <th scope="col">End Date</th>
@@ -76,22 +82,20 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
+            <th scope="row"><?php echo  $companyid ?></th>
             <td><?php echo  $productname?></td>
-            
             <td><?php echo  $row3['Start_date']; ?></td>
             <td><?php echo  $row3['End_date']; ?></td>
             <td><?php echo  $row3['Del_mode']; ?></td>
             <td><?php echo  $row3['Cost']; ?></td>
-            <td>1000</td>
-            <td></td>
+            <td><?php echo  $row3['company_price']; ?></td>
             <td>
-              <form>
-                <input type="number" value="">
-                <button type="submit" class="btn btn-warning btn-sm" style="margin:  4px auto; width:75%;">Negotiate</button>
+              <form action="../../../backend-code/changecost.php?res_id=<?php echo $responseid?>" method="POST">
+                <input type="number" value="" name="cost">
+                <button type="submit" class="btn btn-warning btn-sm" style="margin:  4px auto; ">Negotiate</button>
               </form>
             </td>
-            <td>Accepted</td>
+            <td><?php echo  $row4['Status']; ?></td>
             <td><button type="button" class="btn btn-danger btn-sm">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16">
               <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
