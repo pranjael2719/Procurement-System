@@ -16,6 +16,14 @@
         <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
       </svg> Go back </a>
     </div>
+    <?php 
+    require '../../../backend-code/config.php';
+    $sql="SELECT vendor_rfp.Vendor_ID,vendor.Username,rfp_status.Cost,rfp_status.Start_date,rfp_status.End_date,Del_mode FROM vendor JOIN vendor_rfp ON vendor.ID=vendor_rfp.Vendor_ID JOIN rfp_status ON vendor_rfp.Response_ID=rfp_status.Response_ID ";
+    $result=mysqli_connect($db,$sql);
+    
+
+
+    ?>
 
     <div class="contain">
       <table class="table table-striped">
@@ -32,13 +40,15 @@
           </tr>
         </thead>
         <tbody>
+          <?php while($row=mysqli_fetch_assoc($result))
+    {?>
           <tr>
             <th scope="row">1</th>
-            <td>abc@gmail.com</td>
-            <td>21/02/2009</td>
-            <td>21/04/2009</td>
-            <td>Vendor</td>
-            <td>1020</td>
+            <td><?php $row['Username'] ?></td>
+            <td><?php $row['Start_date'] ?></td>
+            <td><?php $row['End_date'] ?></td>
+            <td><?php $row['Del_mode'] ?></td>
+            <td><?php $row['Cost'] ?></td>
             <td>1000</td>
             <td>
                 <div>
@@ -50,6 +60,7 @@
                 </div>
             </td>
           </tr>
+          <?php } ?>
           
         </tbody>
       </table>
