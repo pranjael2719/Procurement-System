@@ -28,12 +28,42 @@
         <a href="logout.html" class="btn btn-outline-danger sign-out"> Sign out </a>
       </div>
     </nav>
+    <?php
+    require '../../../backend-code/config.php';
+    session_start();
+    $currentuser = $_SESSION['login_user'];
+    $sql = "SELECT ID from vendor where Username ='$currentuser'";
+    $result = mysqli_query($db,$sql);
+    $row = mysqli_fetch_assoc($result);
+
+    $userid = $row['ID'];
+
+    $sql2 ="SELECT Response_ID,Rfp_ID from vendor_rfp where Vendor_ID='$userid'";
+    $result2 = mysqli_query($db,$sql2);
+    while($row2 = mysqli_fetch_assoc($result2)){
+
+    $responseid = $row2['Response_ID'];
+    $rfpid=$row2['Rfp_ID'];
+
+    $sql4= "SELECT product_name FROM company_rfp WHERE Rfp_ID='$rfpid'";
+    $result4=mysqli_query($db,$sql4);
+    $row4 = mysqli_fetch_assoc($result4);
+
+    $productname = $row4['product_name'];
+
+    $sql3 = "SELECT * FROM rfp_status WHERE Response_ID='$responseid'";
+    $result3  = mysqli_query($db,$sql3);
+    while($row3 = mysqli_fetch_assoc($result3)){
+
+    
+  
+    ?>
     <div class="contain">
       <table class="table table-striped">
         <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Product_Name</th>
+            <th scope="col">Product Name</th>
             <th scope="col">Start Date</th>
             <th scope="col">End Date</th>
             <th scope="col">Delivery Mode</th>
@@ -47,16 +77,18 @@
         <tbody>
           <tr>
             <th scope="row">1</th>
-            <td>Otto</td>
-            <td>21/01/2009</td>
-            <td>07/02/2009</td>
-            <td>Manufacturer</td>
+            <td><?php echo  $productname?></td>
+            
+            <td><?php echo  $row3['Start_date']; ?></td>
+            <td><?php echo  $row3['End_date']; ?></td>
+            <td><?php echo  $row3['Del_mode']; ?></td>
+            <td><?php echo  $row3['Cost']; ?></td>
             <td>1000</td>
             <td></td>
             <td>
               <form>
                 <input type="number" value="">
-                <button type="submit" class="btn btn-warning btn-sm" style="margin:  4px auto;">Negotiate</button>
+                <button type="submit" class="btn btn-warning btn-sm" style="margin:  4px auto; width:75%;">Negotiate</button>
               </form>
             </td>
             <td>Accepted</td>
@@ -70,5 +102,6 @@
         </tbody>
       </table>
     </div>
+    <?php } } ?>
   </body>
 </html>
