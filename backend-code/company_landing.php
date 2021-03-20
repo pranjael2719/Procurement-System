@@ -5,14 +5,15 @@ $currentUser = $_SESSION['login_user'];
 $sql = "SELECT ID FROM company WHERE Username ='$currentUser'";
 $result = mysqli_query($db,$sql);
 $row = mysqli_fetch_assoc($result);
-//extracted compnay id 
+//extracted company id 
 $companyid = $row['ID'];
 
 $sql1 = "SELECT * FROM company_rfp WHERE Company_ID='$companyid' and DATEDIFF(end_date,NOW())<=15";
 $result1 = mysqli_query($db,$sql1);
 if(mysqli_num_rows($result1)>0){
     while($row1=mysqli_fetch_assoc($result1)){
-        echo " ".$row1['product_name']. "<br>".$row1['Description']."<br>";
+        if ($row1['Deadline']=='')
+        {echo " ".$row1['product_name']. "<br>".$row1['Description']."<br>";}
     }
 }
 ?>
