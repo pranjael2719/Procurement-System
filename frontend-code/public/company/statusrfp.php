@@ -65,8 +65,9 @@
                 <div>
                   <label for="field1"><span>New Price: <span class="required"></span></span><input type="number" class="input-field" name="field1" value="" /></label>
                 </div>
-                <div style="text-align: center;">
-                  <button type="submit" class="btn btn-warning btn-sm" >Negotiate</button>
+                <div style="text-align: center;" >
+                  <button type="submit" class="btn btn-warning btn-sm" name="Neg" value="Neg">Negotiate</button>
+                  <button type="submit" class="btn btn-success" name="Accept" value="Accept">Accept</button>
                 </div>
               </form>
             </td>
