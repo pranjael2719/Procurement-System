@@ -18,7 +18,7 @@
     </div>
     <?php 
     require '../../../backend-code/config.php';
-    $sql="SELECT vendor_rfp.Vendor_ID,vendor.Username,rfp_status.Cost,rfp_status.Start_date,rfp_status.End_date,rfp_status.Del_mode FROM vendor JOIN vendor_rfp ON vendor.ID=vendor_rfp.Vendor_ID JOIN rfp_status ON vendor_rfp.Response_ID=rfp_status.Response_ID ";
+    $sql="SELECT vendor_rfp.Vendor_ID,vendor.Username,rfp_status.Cost,rfp_status.Start_date,rfp_status.End_date,rfp_status.Del_mode,rfp_status.company_price FROM vendor JOIN vendor_rfp ON vendor.ID=vendor_rfp.Vendor_ID JOIN rfp_status ON vendor_rfp.Response_ID=rfp_status.Response_ID ";
     $result=mysqli_query($db,$sql);
 
     ?>
@@ -27,7 +27,7 @@
       <table class="table table-striped">
         <thead class="thead-dark" >
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">Vendor ID</th>
             <th scope="col">Vendor Email</th>
             <th scope="col">Start Date</th>
             <th scope="col">End Date</th>
@@ -41,13 +41,13 @@
           <?php while($row=mysqli_fetch_assoc($result))
     { ?>
           <tr>
-            <th scope="row">1</th>
+            <th scope="row"><?php echo $row['Vendor_ID']; ?></th>
             <td><?php echo $row['Username']; ?></td>
             <td><?php echo $row['Start_date']; ?></td>
             <td><?php echo $row['End_date']; ?></td>
             <td><?php echo $row['Del_mode']; ?></td>
             <td><?php echo $row['Cost']; ?></td>
-            <td>1000</td>
+            <td><?php echo $row['company_price']; ?></td>
             <td>
                 <div>
                   <label for="field1"><span>New Price: <span class="required"></span></span><input type="number" class="input-field" name="field1" value="" /></label>

@@ -45,11 +45,12 @@
     $responseid = $row2['Response_ID'];
     $rfpid=$row2['Rfp_ID'];
 
-    $sql4= "SELECT product_name FROM company_rfp WHERE Rfp_ID='$rfpid'";
+    $sql4= "SELECT product_name,Company_ID FROM company_rfp WHERE Rfp_ID='$rfpid'";
     $result4=mysqli_query($db,$sql4);
     $row4 = mysqli_fetch_assoc($result4);
 
     $productname = $row4['product_name'];
+    $companyid = $row4['Company_ID'];
 
     $sql3 = "SELECT * FROM rfp_status WHERE Response_ID='$responseid'";
     $result3  = mysqli_query($db,$sql3);
@@ -76,14 +77,14 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
+            <th scope="row"><?php echo  $companyid ?></th>
             <td><?php echo  $productname?></td>
             
             <td><?php echo  $row3['Start_date']; ?></td>
             <td><?php echo  $row3['End_date']; ?></td>
             <td><?php echo  $row3['Del_mode']; ?></td>
             <td><?php echo  $row3['Cost']; ?></td>
-            <td>1000</td>
+            <td><?php echo  $row3['company_price']; ?></td>
             <td></td>
             <td>
               <form>
