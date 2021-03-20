@@ -1,3 +1,11 @@
+<?php
+$id=  $_GET['rfp_id'];
+session_start();
+    require '../../../backend-code/config.php';
+    $sql = "SELECT * FROM company_rfp WHERE Rfp_ID = '$id'";
+    $result =mysqli_query($db,$sql);
+    $row = mysqli_fetch_assoc($result);
+?>
 <html>
     <head>
         <title> RFP Form</title>
@@ -6,12 +14,12 @@
     <body>
         <div class="form-design">
             <h1> Proposal Form </h1>
-                <form action="" method="post">
+                <form action="../../../backend-code/form_submit.php?rfp_id=<?php echo $id;?>" method="post">
                     <div class="sec"><span>1</span>Product Details</div>
                     <div class="box">
-                        <p>Name</p>
-                        <p>Description</p>
-                        <p>Deadline</p>
+                        <p>Name : <?php echo $row['product_name']; ?></p>
+                        <p>Description : <?php echo $row['Description'];?></p>
+                        <p>Deadline : <?php echo $row['Deadline'];?></p>
                     </div>
                     <div class="sec"><span>2</span>Fill up</div>
                     <div class="box">

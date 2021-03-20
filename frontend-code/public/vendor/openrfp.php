@@ -37,7 +37,21 @@
     require '../../../backend-code/config.php';
     $sql = "SELECT * FROM company_rfp WHERE Deadline != 'NULL'";
     $result =mysqli_query($db,$sql);
+
+    $currentuser = $_SESSION['login_user'];
+   
+
+    $sql1 = "SELECT ID FROM vendor WHERE Username='$currentuser'";
+    $result1 = mysqli_query($db,$sql1);
+    $row1 = mysqli_fetch_assoc($result1);
+    $vendorid = $row1['ID'];
+  
+
     while($row=mysqli_fetch_assoc($result)){
+      $fetch =$row['Rfp_ID'];
+      $sql3 = "SELECT * FROM vendor_rfp WHERE Vendor_ID='$vendorid' AND Rfp_ID='$fetch'";
+      $result3 = mysqli_query($db,$sql3);
+      if(mysqli_num_rows($result3)==0){
 
     ?>
     
@@ -72,7 +86,7 @@
       <!-- car ends here-->
       <!-- new card goes here-->
   
-  <?php } ?>
+  <?php } } ?>
   </div>
   </body>
 </html>

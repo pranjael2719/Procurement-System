@@ -28,7 +28,7 @@ require_once "config.php";
             $count = mysqli_num_rows($result);
             if($count ==1){
                 $_SESSION['login_user'] = $myusername;
-                header("location: vendor.php");
+                header("location: ../frontend-code/public/vendor/openrfp.php");
     
             }
             else{
