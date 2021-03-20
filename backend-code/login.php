@@ -14,8 +14,7 @@ require_once "config.php";
             if($count ==1){
                 
                 $_SESSION['login_user'] = $myusername;
-                header("location: company_landing.php");
-    
+                header("location: ../frontend-code/public/company/yetToPublish.php");
             }
             else{
                 $error = "Invalid Password";

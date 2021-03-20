@@ -1,3 +1,5 @@
+
+
 <html>
   <head>
     <title>
@@ -23,6 +25,9 @@
           <li class="nav-item">
             <a class="nav-link" href="publishedrfp.html"> Published RFP </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="acceptedrfp.html"> Accepted RFP </a>
+        </li>
   
         </ul>
   
@@ -32,23 +37,40 @@
     </nav>
 
     <div class="container">
+    <?php
+      require_once "../../../backend-code/config.php";
+      session_start();
+      $currentUser = $_SESSION['login_user'];
+      $sql = "SELECT ID FROM company WHERE Username ='$currentUser'";
+      $result = mysqli_query($db,$sql);
+      $row = mysqli_fetch_assoc($result);
+      //extracted company id 
+      $companyid = $row['ID'];
+
+      $sql1 = "SELECT * FROM company_rfp WHERE Company_ID='$companyid' and DATEDIFF(end_date,NOW())<=15";
+      $result1 = mysqli_query($db,$sql1);
+      if(mysqli_num_rows($result1)>0){
+          while($row1=mysqli_fetch_assoc($result1)){
+              if ($row1['Deadline']=='')
+              {
+    ?>
       <!--card starts here-->
         <div class="card">
             <div class="face face1">
                 <div class="content">
                     <div class="icon">
                       <div class="desc">
-                        Product name
+                        <?php echo $row1['product_name']; ?> 
                       </div>
-                      <div class="date"><p>Expiry: <br>26-11-2021</p></div>
+                      <div class="date"><p>Expiry: <br><?php echo $row1['end_date']; ?> </p></div>
                     </div>
                 </div>
             </div>
             <div class="face face2">
                 <div class="content">
-                    <form>
+                    <form action="../../../backend-code/setDeadline.php?rfp_id=<?php echo $row1['Rfp_ID'];?>" method="POST">
                       <label for="field1"> Deadline: <input type="date" name="field1" class="date-field" required></label>
-                      <label for="field2"> Description: <textarea name="field2" class="textarea-field" required disabled></textarea></label>
+                      <label for="field2"> Description: <textarea name="field2" class="textarea-field" placeholder= "<?php echo $row1['Description']; ?> "required disabled></textarea></label>
                       <button type="submit" class="btn btn-primary btn-sm">Publish</button>
                     </form>
                 </div>
@@ -56,6 +78,7 @@
         </div>
       <!-- car ends here-->
       <!-- new card goes here-->
+      <?php } } }?>
     </div>
 
   </body>
