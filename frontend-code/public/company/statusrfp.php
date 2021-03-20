@@ -57,7 +57,7 @@
             <td><?php echo $row1['Cost']; ?></td>
             <td><?php echo $row1['company_price']; ?></td>
             <td>
-              <form action="../../../backend-code/changecompanyprice.php?res_id=<?php echo $responseid;?>" method="POST">
+              <form action="../../../backend-code/changecompanyprice.php?res_id=<?php echo $responseid;?>&&rfp_id=<?php echo $rfp_id;?>" method="POST">
                 <div>
                   <label for="field1"><span>New Price: <span class="required"></span></span><input type="number" class="input-field" name="field1" value="" /></label>
                 </div>
