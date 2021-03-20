@@ -9,16 +9,20 @@
 	-> Catgory of the user is to be selected before the login (like vendor or company)
 
 ### Landing page
-	#### Vendor 
+##### Vendor 
 		-> RFP of all the company that are open for acceptance 
 		-> RFP accepted or on transit or confirmed or Rejected
 	
+<<<<<<< HEAD
 	#### Company (Procurement Team)
+=======
+##### Compnay (Procurement Team)
+>>>>>>> 0a6c101a1f072c6d1f2f8a805ed6a58b5d08a636
 		-> List of RFP that are gonna expire within the time period of 15 days
 		-> button (publish) (edit RFP) (Status)
 
 ### Within RFP
-	#### Vendor side
+##### Vendor side
 		-> (Generate ) if already filled  (change)
 			->Generate (options)
 				-> Total Cost per unit 
@@ -32,7 +36,7 @@
 				-> Declare the final rate/ accept the compnay price  ( then the agreement is submited  )
 				** Note : Agreement is submited after the acceptance 
 
-	#### Company Side 
+##### Company Side 
 			->Publish
 				-> description of the RFP
 			->edit RFP
