@@ -14,7 +14,7 @@ require_once "config.php";
             if($count ==1){
                 
                 $_SESSION['login_user'] = $myusername;
-                header("location: company.php");
+                header("location: company_landing.php");
     
             }
             else{
