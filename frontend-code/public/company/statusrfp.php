@@ -19,7 +19,7 @@
     <?php 
     require '../../../backend-code/config.php';
     $rfp_id=$_GET['rfp_id'];
-    $sql="SELECT vendor_rfp.Vendor_ID,vendor.Username,rfp_status.Cost,rfp_status.Start_date,rfp_status.End_date,rfp_status.Del_mode,rfp_status.company_price,rfp_status.Response_ID FROM vendor JOIN vendor_rfp ON vendor.ID=vendor_rfp.Vendor_ID JOIN rfp_status ON vendor_rfp.Response_ID=rfp_status.Response_ID WHERE vendor_rfp.Rfp_ID='$rfp_id' ";
+    $sql="SELECT * from vendor_rfp WHERE Rfp_ID='$rfp_id'";
     $result=mysqli_query($db,$sql);
     ?>
 
@@ -39,15 +39,23 @@
         </thead>
         <tbody>
           <?php while($row=mysqli_fetch_assoc($result))
-    { $responseid=$row['Response_ID']; ?>
+    { $responseid=$row['Response_ID']; 
+      $vendorid=$row['Vendor_ID'];
+      $sql1="SELECT * from rfp_status WHERE Response_ID='$responseid'";
+      $result1=mysqli_query($db,$sql1);
+      $row1=mysqli_fetch_assoc($result1);
+      $sql2="SELECT * from vendor WHERE ID='$vendorid'";
+      $result2=mysqli_query($db,$sql2);
+      $row2=mysqli_fetch_assoc($result2);
+    ?>
           <tr>
-            <th scope="row"><?php echo $row['Vendor_ID']; ?></th>
-            <td><?php echo $row['Username']; ?></td>
-            <td><?php echo $row['Start_date']; ?></td>
-            <td><?php echo $row['End_date']; ?></td>
-            <td><?php echo $row['Del_mode']; ?></td>
-            <td><?php echo $row['Cost']; ?></td>
-            <td><?php echo $row['company_price']; ?></td>
+            <th scope="row"><?php echo $vendorid; ?></th>
+            <td><?php echo $row2['Username']; ?></td>
+            <td><?php echo $row1['Start_date']; ?></td>
+            <td><?php echo $row1['End_date']; ?></td>
+            <td><?php echo $row1['Del_mode']; ?></td>
+            <td><?php echo $row1['Cost']; ?></td>
+            <td><?php echo $row1['company_price']; ?></td>
             <td>
               <form action="../../../backend-code/changecompanyprice.php?res_id=<?php echo $responseid;?>" method="POST">
                 <div>
