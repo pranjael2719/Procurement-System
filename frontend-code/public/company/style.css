@@ -28,28 +28,3 @@
 	margin-left: 65%;
 	border-radius: 0.75em;
 }
-
-.details
-{
-	border: 1px solid black;
-	border-radius: 2px;
-	margin: 3% 15%;
-	padding: 2% 5%;
-}
-
-.form-control
-{
-	border: none;
-}
-input:focus{
-	outline: 0 0 0 0  !important;
-	box-shadow: 0 0 0 0 !important;
-}
-.contain{
-	margin-top: 10px;
-	margin: 0px 10px;
-}
-
-.thread-dark{
-	border-radius: 4px;
-}
