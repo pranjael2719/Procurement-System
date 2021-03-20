@@ -74,8 +74,8 @@
             <td><?php echo $row4['Cost']; ?></td>
             <td>
                 <div style="text-align: center;">
-                  <button type="button" class="btn btn-success btn-sm" >Confirm</button>
-                  <button type="button" class="btn btn-danger btn-sm" style="margin-left: 20px; ">Reject</button>
+                  <button type="button" class="btn btn-success btn-sm" onclick="location.href='../../../backend-code/confirm.php'" >Confirm</button>
+                  <button type="button" class="btn btn-danger btn-sm" onclick="location.href='../../../backend-code/reject.php'" style="margin-left: 20px; ">Reject</button>
                 </div>
             </td>
           </tr>
