@@ -5,6 +5,7 @@
     </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="card.css">
     <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
   </head>
   <body>
@@ -20,7 +21,7 @@
             <a class="nav-link" href="yetToPublish.html"> Yet to Publish <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="publishedrsp.html"> Published RFP </a>
+            <a class="nav-link" href="publishedrfp.html"> Published RFP </a>
           </li>
   
         </ul>
@@ -29,6 +30,33 @@
   
       </div>
     </nav>
+
+    <div class="container">
+      <!--card starts here-->
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <div class="icon">
+                      <div class="desc">
+                        Product name
+                      </div>
+                      <div class="date"><p>Expiry: <br>26-11-2021</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <form>
+                      <label for="field1"> Deadline: <input type="date" name="field1" class="date-field" required></label>
+                      <label for="field2"> Description: <textarea name="field2" class="textarea-field" required></textarea></label>
+                      <button type="submit" class="btn btn-primary btn-sm">Publish</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+      <!-- car ends here-->
+      <!-- new card goes here-->
+    </div>
 
   </body>
 </html>

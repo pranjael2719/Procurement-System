@@ -18,10 +18,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active disabled">
-            <a class="nav-link" href="openrfp.html"> Open RFPs <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="openrfp.php"> Open RFPs <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="rfpstatus.html"> RFP Status </a>
+            <a class="nav-link" href="rfpstatus.php"> RFP Status </a>
           </li>
   
         </ul>

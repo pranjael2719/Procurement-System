@@ -7,6 +7,7 @@
 	border: 1px solid #ccc;
 	}
 	.form-design .box{
+	color: black;
 	padding: 30px;
 	border-radius: 10px;
 	margin-bottom: 20px;
@@ -69,6 +70,7 @@
 	border-radius: 5px;
 	color: #fff;
 	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+	width: 100%;
 	}
 	
 	.form-design button[type="submit"]:hover,

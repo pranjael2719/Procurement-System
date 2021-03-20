@@ -6,11 +6,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
 
     <div>
-      <a href="publishedrsp.html" class="btn btn-"> Go back </a>
+      <a href="publishedrfp.html" class="btn btn-outline-primary" style="margin: 10px 20px;"> 
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+      </svg> Go back </a>
     </div>
 
     <div class="contain">
@@ -18,9 +22,9 @@
         <thead class="thead-dark" >
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Vendor_Name</th>
-            <th scope="col">Start_Date</th>
-            <th scope="col">End_Date</th>
+            <th scope="col">Vendor Email</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
             <th scope="col">Delivery Mode</th>
             <th scope="col">Cost/Unit</th>
             <th scope="col">Previous Negotiated Price</th>
@@ -30,7 +34,7 @@
         <tbody>
           <tr>
             <th scope="row">1</th>
-            <td>Mota</td>
+            <td>abc@gmail.com</td>
             <td>21/02/2009</td>
             <td>21/04/2009</td>
             <td>Vendor</td>
@@ -41,8 +45,8 @@
                   <label for="field1"><span>New Price: <span class="required"></span></span><input type="number" class="input-field" name="field1" value="" /></label>
                 </div>
                 <div style="text-align: center;">
-                  <button type="button" class="btn btn-warning btn-sm" style="width: 100px;">Update</button>
-                  <button type="button" class="btn btn-success btn-sm" style="margin-left: 20px; width: 100px;">Accept</button>
+                  <button type="button" class="btn btn-warning btn-sm" >Negotiate</button>
+                  <button type="button" class="btn btn-success btn-sm" style="margin-left: 20px; ">Accept</button>
                 </div>
             </td>
           </tr>
