@@ -17,10 +17,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item ">
-            <a class="nav-link" href="yetToPublish.html"> Yet To Publish <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="yetToPublish.php"> Yet To Publish <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active disabled">
-            <a class="nav-link" href="publishedrfp.html"> Published RFP </a>
+            <a class="nav-link" href="publishedrfp.php"> Published RFP </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="acceptedrfp.html"> Accepted RFP </a>
@@ -37,7 +37,7 @@
       <table class="table table-striped">
         <thead class="thead-dark" >
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">Product ID</th>
             <th scope="col">Product_Name</th>
             <th scope="col">Description</th>
             <th scope="col">Expiry date</th>
@@ -47,16 +47,28 @@
           </tr>
         </thead>
         <tbody>
+          <?php
+            require_once "../../../backend-code/config.php";
+            session_start();
+            $currentuser = $_SESSION['login_user'];
+            $sql1 = "SELECT ID FROM company WHERE Username='$currentuser'";
+            $result1 = mysqli_query($db,$sql1);
+            $row1 = mysqli_fetch_assoc($result1);
+            $companyid = $row1['ID'];
+            $sql = "SELECT * FROM company_rfp WHERE Company_ID='$companyid' and Deadline != 'NULL'";
+            $result = mysqli_query($db,$sql);
+            while($row=mysqli_fetch_assoc($result)){
+          ?>
           <tr>
-            <th scope="row">1</th>
-            <td>Otto</td>
-            <td>Bad</td>
-            <td>21/04/2009</td>
-            <td>20/04/2009</td>
-            <td><a href="statusrfp.php" class="btn btn-info btn-sm" style="width: 100px;">Status</a></td>
-            <td><a href="editrfp.html" class="btn btn-warning btn-sm" style="width: 100px;">Edit</a></td>
+            <th scope="row"><?php echo $row['Rfp_ID'];?></th>
+            <td><?php echo $row['product_name'];?></td>
+            <td><?php echo $row['Description'];?></td>
+            <td><?php echo $row['end_date'];?></td>
+            <td><?php echo $row['Deadline'];?></td>
+            <td><a href="statusrfp.php?rfp_id=<?php echo $row['Rfp_ID'];?>" class="btn btn-info btn-sm" style="width: 100px;">Status</a></td>
+            <td><a href="editrfp.php" class="btn btn-warning btn-sm" style="width: 100px;">Edit</a></td>
           </tr>
-          
+          <?php } ?>
         </tbody>
       </table>
     </div>
