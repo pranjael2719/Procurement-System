@@ -12,7 +12,7 @@ $sql1 = "SELECT * FROM company_rfp WHERE Company_ID='$companyid'";
 $result1 = mysqli_query($db,$sql1);
 if(mysqli_num_rows($result1)>0){
     while($row1=mysqli_fetch_assoc($result1)){
-        echo " ".$row1['end_date']. "<br>"
+        echo " ".$row1['end_date']. "<br>";
     }
 }
 
