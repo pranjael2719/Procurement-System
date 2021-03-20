@@ -18,7 +18,7 @@
     </div>
     <?php 
     require '../../../backend-code/config.php';
-    $sql="SELECT vendor_rfp.Vendor_ID,vendor.Username,rfp_status.Cost,rfp_status.Start_date,rfp_status.End_date,rfp_status.Del_mode,rfp_status.company_price FROM vendor JOIN vendor_rfp ON vendor.ID=vendor_rfp.Vendor_ID JOIN rfp_status ON vendor_rfp.Response_ID=rfp_status.Response_ID ";
+    $sql="SELECT vendor_rfp.Vendor_ID,vendor.Username,rfp_status.Cost,rfp_status.Start_date,rfp_status.End_date,rfp_status.Del_mode,rfp_status.company_price,rfp_status.Response_ID FROM vendor JOIN vendor_rfp ON vendor.ID=vendor_rfp.Vendor_ID JOIN rfp_status ON vendor_rfp.Response_ID=rfp_status.Response_ID ";
     $result=mysqli_query($db,$sql);
 
     ?>
@@ -39,7 +39,7 @@
         </thead>
         <tbody>
           <?php while($row=mysqli_fetch_assoc($result))
-    { ?>
+    { $responseid=$row['Response_ID']; ?>
           <tr>
             <th scope="row"><?php echo $row['Vendor_ID']; ?></th>
             <td><?php echo $row['Username']; ?></td>
@@ -49,13 +49,14 @@
             <td><?php echo $row['Cost']; ?></td>
             <td><?php echo $row['company_price']; ?></td>
             <td>
+              <form action="../../../backend-code/changecompanyprice.php?res_id=<?php echo $responseid;?>" method="POST">
                 <div>
                   <label for="field1"><span>New Price: <span class="required"></span></span><input type="number" class="input-field" name="field1" value="" /></label>
                 </div>
                 <div style="text-align: center;">
-                  <button type="button" class="btn btn-warning btn-sm" >Negotiate</button>
-                  <button type="button" class="btn btn-success btn-sm" style="margin-left: 20px; ">Accept</button>
+                  <button type="submit" class="btn btn-warning btn-sm" >Negotiate</button>
                 </div>
+              </form>
             </td>
           </tr>
           <?php } ?>
