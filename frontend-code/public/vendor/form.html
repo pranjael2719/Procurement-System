@@ -1,14 +1,20 @@
 <html>
     <head>
         <title> RFP Form</title>
-        <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="form.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     </head>
     <body>
-        <div class="container">
-            <div class="form-style-2">
+        <div class="form-design">
+            <h1> Proposal Form </h1>
                 <form action="" method="post">
+                    <div class="sec"><span>1</span>Product Details</div>
+                    <div class="box">
+                        <p>Name</p>
+                        <p>Description</p>
+                        <p>Deadline</p>
+                    </div>
+                    <div class="sec"><span>2</span>Fill up</div>
+                    <div class="box">
                     <label for="field1"><span>Cost per unit <span class="required">*</span></span><input type="number" class="input-field" name="field1" value="" /></label>
                     <label for="field2"><span>Agreement start date <span class="required">*</span></span><input type="date" class="input-field" name="field2" value="" /></label>
                     <label for="field3"><span>Agreement end date </span><input type="date" class="input-field" name="field3" value="" /></label>
@@ -16,8 +22,10 @@
                         <option value="Vendor">Vendor</option>
                         <option value="Manufacturer">Manufacturer</option>
                         </select></label>
+                    </div>
                     
-                    <label><span> </span><input type="submit" value="Submit" /></label>
+                    <input type="submit" value="Submit" />
+                    <button type="submit" value="goback">Go Back</button>
                 </form>
             </div>
         </div>   
