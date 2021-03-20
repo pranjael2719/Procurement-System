@@ -28,6 +28,7 @@
 	margin-left: 50%;
 	border-radius: 0.75em;
 }
+<<<<<<< HEAD
 
 .details
 {
@@ -44,4 +45,8 @@
 input:focus{
 	outline: 0 0 0 0  !important;
 	box-shadow: 0 0 0 0 !important;
+=======
+.container{
+	margin-top: 10px;
+>>>>>>> 31bba5464ed1f6f409b3029a24967e759df869c9
 }
