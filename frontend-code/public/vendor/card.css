@@ -11,6 +11,7 @@
 .container .card {
     position: relative;
     border-radius: 10px;
+    margin: 5px;
 }
 
 .container .card .icon {
@@ -19,7 +20,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: #216288;
+    background: teal;
     transition: 0.7s;
     z-index: 1;
 }
@@ -62,7 +63,7 @@ i {
 }
 
 .container .card .face {
-    width: 300px;
+    width: 250px;
     height: 200px;
     transition: 0.5s;
 }
