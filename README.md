@@ -9,7 +9,7 @@
 	-> Catgory of the user is to be selected befoe the login (like vendor or company)
 
 ### Landing page
-	###### Vendor 
+#### Vendor 
 		-> RFP of all the company that are open for acceptance 
 		-> RFP accepted or on transit 
 	
