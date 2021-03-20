@@ -8,12 +8,11 @@ $row = mysqli_fetch_assoc($result);
 //extracted compnay id 
 $companyid = $row['ID'];
 
-$sql1 = "SELECT * FROM company_rfp WHERE Company_ID='$companyid'";
+$sql1 = "SELECT * FROM company_rfp WHERE Company_ID='$companyid' and DATEDIFF(end_date,NOW())<=15";
 $result1 = mysqli_query($db,$sql1);
 if(mysqli_num_rows($result1)>0){
     while($row1=mysqli_fetch_assoc($result1)){
-        echo " ".$row1['end_date']. "<br>";
+        echo " ".$row1['product_name']. "<br>".$row1['Description']."<br>";
     }
 }
-
 ?>
