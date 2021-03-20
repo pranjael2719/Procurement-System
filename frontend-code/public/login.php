@@ -36,7 +36,7 @@
                             <div style="text-align: center;">
                                 <h3>Login to Continue</h3><br>
                             </div>
-                            <form action="" method="POST" onsubmit="return check()" name='login'>
+                            <form action="../../backend-code/login.php" method="POST" onsubmit="return check()" name='login'>
                                 <div class="form-group mb-3">
                                     <label for="email1">Email ID </label>
                                     <input type="text" class="form-control" id="email1" aria-describedby="emailHelp" style="border-radius: 40px" placeholder="Email ID" required name="email">
@@ -50,12 +50,12 @@
                                 <div class="form-group mb-3">
                                     <label for="category">Category</label>
                                     <select id="category" name="category" class="form-control">
-                                        <option value="teacher" selected>Vendor</option>
-                                        <option value="student">Company</option>
+                                        <option value="vendor" selected>Vendor</option>
+                                        <option value="company">Company</option>
                                     </select>
                                 </div>
                                 <div class="qq">
-                                    <p>Do not have an account? <a href="signup.html"> Sign Up</a> </p>
+                                    <p>Do not have an account? <a href="signup.php"> Sign Up</a> </p>
                                 </div>
                                 <input type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm" value="Sign in">
                             </form>

@@ -60,7 +60,7 @@
                                     </select>
                                 </div>
                                 <div class="qq">
-                                    <p>Already have an account? <a href="index.html">Login</a> </p>
+                                    <p>Already have an account? <a href="login.php">Login</a> </p>
                                 </div>
                                 <input type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm" value="Sign Up">
                             </form>

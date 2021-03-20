@@ -4,7 +4,7 @@ require_once "config.php";
     $myusername = $mypassword = "";
     $count=0;
     if($_SERVER["REQUEST_METHOD"]=="POST"){
-        $myusername = $_POST['username'];
+        $myusername = $_POST['email'];
         $mypassword = $_POST['password'];
         $role = $_POST['category'];
         if($role =="company"){
@@ -12,7 +12,7 @@ require_once "config.php";
             $result = mysqli_query($db,$sql);
             $count = mysqli_num_rows($result);
             if($count ==1){
-                session_register("myusername");
+                
                 $_SESSION['login_user'] = $myusername;
                 header("location: company.php");
     
@@ -23,11 +23,10 @@ require_once "config.php";
             }
         }
         else if($role=="vendor"){
-            $sql = "SELECT ID FROM $vendor  WHERE Username ='$myusername' and Password='$mypassword' ";
+            $sql = "SELECT ID FROM vendor  WHERE Username ='$myusername' and Password='$mypassword' ";
             $result = mysqli_query($db,$sql);
             $count = mysqli_num_rows($result);
             if($count ==1){
-                session_register("myusername");
                 $_SESSION['login_user'] = $myusername;
                 header("location: vendor.php");
     
