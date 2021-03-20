@@ -1,6 +1,6 @@
 
 .form-style-2{
-	max-width: 500px;
+	max-width: 600px;
 	padding: 20px 12px 10px 20px;
 	font: 13px Arial, Helvetica, sans-serif;
 }
@@ -10,7 +10,7 @@
 	margin: 0px 5px 25px 0px;
 }
 .form-style-2 label > span{
-	width: 100px;
+	width: 150px;
 	font-weight: bold;
 	float: left;
 	padding-top: 8px;
@@ -35,7 +35,7 @@
 	border-radius: 3px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
-	padding: 7px;
+	padding: 5px;
 	outline: none;
 }
 .form-style-2 .input-field:focus, .form-style-2 .select-field:focus{
@@ -44,6 +44,7 @@
 
 .form-style-2 input[type=submit],
 .form-style-2 input[type=button]{
+    width: 40%;
 	border: none;
 	padding: 8px 15px 8px 15px;
 	background: #FF8500;
