@@ -66,7 +66,7 @@
             <td><?php echo $row['end_date'];?></td>
             <td><?php echo $row['Deadline'];?></td>
             <td><a href="statusrfp.php?rfp_id=<?php echo $row['Rfp_ID'];?>" class="btn btn-info btn-sm" style="width: 100px;">Status</a></td>
-            <td><a href="editrfp.php" class="btn btn-warning btn-sm" style="width: 100px;">Edit</a></td>
+            <td><a href="editrfp.php?rfp_id=<?php echo $row['Rfp_ID'];?>" class="btn btn-warning btn-sm" style="width: 100px;">Edit</a></td>
           </tr>
           <?php } ?>
         </tbody>
