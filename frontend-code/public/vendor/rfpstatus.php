@@ -87,8 +87,8 @@
             <td><?php echo  $row3['company_price']; ?></td>
             <td></td>
             <td>
-              <form>
-                <input type="number" value="">
+              <form action="../../../backend-code/changecost.php?res_id=<?php echo $responseid?>" method="POST">
+                <input type="number" value="" name="cost">
                 <button type="submit" class="btn btn-warning btn-sm" style="margin:  4px auto; width:75%;">Negotiate</button>
               </form>
             </td>
