@@ -26,7 +26,7 @@
             <a class="nav-link" href="publishedrfp.php"> Published RFP </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="acceptedrfp.html"> Accepted RFP </a>
+            <a class="nav-link" href="acceptedrfp.php"> Accepted RFP </a>
         </li>
   
         </ul>

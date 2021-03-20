@@ -47,6 +47,10 @@
       $sql2="SELECT * from vendor WHERE ID='$vendorid'";
       $result2=mysqli_query($db,$sql2);
       $row2=mysqli_fetch_assoc($result2);
+      $sql3="SELECT * from status WHERE Response_ID='$responseid'";
+      $result3=mysqli_query($db,$sql3);
+      $row3=mysqli_fetch_assoc($result3);
+      if ($row3["Status"]=="Negotiate") {
     ?>
           <tr>
             <th scope="row"><?php echo $vendorid; ?></th>
@@ -67,7 +71,7 @@
               </form>
             </td>
           </tr>
-          <?php } ?>
+          <?php } } ?>
           
         </tbody>
       </table>
