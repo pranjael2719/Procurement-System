@@ -1,0 +1,13 @@
+.login,.image {
+    min-height: 100vh;
+  }
+  
+  .bg-image {
+    background-image: url("https://j8p6i9g7.stackpathcdn.com/wp-content/uploads/2020/08/SO.png");
+    background-size: cover;
+    background-position: center center;
+  }
+
+ .qq{
+      text-align: center;
+  }

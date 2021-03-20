@@ -1,0 +1,30 @@
+.navbar-brand
+{
+	font-family: Acme;
+	color: white;
+	font-size: 1.5em;
+}
+.nav-item
+{
+	width: 175px;
+	margin: 0 5%;
+	padding: 0 2%;
+	text-align: center;
+}
+.nav-item:hover
+{
+	border: 1px solid rgb(255, 174, 0);
+	border-radius: 0.5em;
+	box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.4);
+}
+.active
+{
+	border: 1px solid blue;
+	border-radius: 0.5em;
+	box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.4);
+}
+.sign-out
+{
+	margin-left: 50%;
+	border-radius: 0.75em;
+}

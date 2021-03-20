@@ -4,16 +4,16 @@
 ## Features
 
 ### Login Page 
-	-> Login for the vendor or the compnay (based on the credential )
+	-> Login for the vendor or the company (based on the credential )
 	-> admin login is seperated
-	-> Catgory of the user is to be selected befoe the login (like vendor or company)
+	-> Catgory of the user is to be selected before the login (like vendor or company)
 
 ### Landing page
 	#### Vendor 
 		-> RFP of all the company that are open for acceptance 
-		-> RFP accepted or on transit 
+		-> RFP accepted or on transit or confirmed or Rejected
 	
-	#### Compnay (Procurement Team)
+	#### Company (Procurement Team)
 		-> List of RFP that are gonna expire within the time period of 15 days
 		-> button (publish) (edit RFP) (Status)
 
@@ -22,7 +22,7 @@
 		-> (Generate ) if already filled  (change)
 			->Generate (options)
 				-> Total Cost per unit 
-				->agreement start date
+				-> agreement start date
 				-> end date
 				-> delivery mode
 				-> submit button
