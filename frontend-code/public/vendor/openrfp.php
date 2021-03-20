@@ -30,23 +30,38 @@
   
       </div>
     </nav>
+    
     <div class="container">
+    <?php
+    session_start();
+    require '../../../backend-code/config.php';
+    $sql = "SELECT * FROM company_rfp WHERE Deadline != 'NULL'";
+    $result =mysqli_query($db,$sql);
+    while($row=mysqli_fetch_assoc($result)){
+
+    ?>
+    
+   
+
+    
       <!--card starts here-->
         <div class="card">
             <div class="face face1">
                 <div class="content">
                     <div class="icon">
                       <div class="desc">
-                        Product name
+                        <?php echo  $row['product_name']; ?>
                       </div>
-                      <div class="date"><p>Deadline:<br>26-11-2021</p></div>
+
+                      <div class="date"><p>Deadline:<br> <?php echo $row['Deadline']; ?></p></div>
                     </div>
                 </div>
             </div>
             <div class="face face2">
                 <div class="content">
-                    
-                    <p>Extra 1-2 line information lets see how much line it can really take as a input from me withput coming down. seems to be working fine</p>
+                <?php
+                    echo "<p>" . $row['Description'] . "</p>";
+                  ?>
                   <br>
                   <h3>
                         <a href="form.html" target="_blank">Fill the form</a>
@@ -56,6 +71,8 @@
         </div>
       <!-- car ends here-->
       <!-- new card goes here-->
+  
+  <?php } ?>
   </div>
   </body>
 </html>
