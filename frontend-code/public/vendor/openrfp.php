@@ -64,7 +64,7 @@
                   ?>
                   <br>
                   <h3>
-                        <a href="form.html" target="_blank">Fill the form</a>
+                        <a href="form.php?rfp_id=<?php echo $row['Rfp_ID']; ?>" target="_blank">Fill the form</a>
                     </h3>
                 </div>
             </div>
