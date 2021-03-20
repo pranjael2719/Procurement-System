@@ -6,7 +6,7 @@
     }
 $database = procurement_db;
 require_once "config.php";
-    $username = $password = "";
+    $myusername = $mypassword = "";
     if($_SERVER["REQUEST_METHOD"]=="POST"){
         $myusername = $_POST['username'];
         $mypassword = $_POST['password'];
