@@ -58,8 +58,30 @@
             $result1 = mysqli_query($db,$sql1);
             $row1 = mysqli_fetch_assoc($result1);
             $companyid = $row1['ID'];
+            $sql2 = "SELECT * FROM company_rfp WHERE Company_ID='$companyid' ";
+            $result2 = mysqli_query($db,$sql2);
+            while($row2 = mysqli_fetch_assoc($result2)){
+            $rfpid = $row2['Rfp_ID'];
+            $sql3 ="SELECT * FROM vendor_rfp WHERE Rfp_ID ='$rfpid'";
+            $result3=mysqli_query($db,$sql3);
+            while($row3 = mysqli_fetch_assoc($result3)){
+              $responseid = $row3['Response_ID'];
+              $sql4="SELECT Status FROM status where Response_ID='$responseid'";
+              $result4 = mysqli_query($db,$sql4);
+              $row4 = mysqli_fetch_assoc($result4);
+
+              $currentstatus = $row4['Status'];
+              if($currentstatus == 'Confirmed'){
+                echo $rfpid;
+                $sql4 = "UPDATE TABLE company_rfp set Deadline=NULL where Rfp_ID='$rfpid'";
+                mysqli_query($db,$sql4);
+                break;
+              }
+            }
+          }
             $sql = "SELECT * FROM company_rfp WHERE Company_ID='$companyid' and Deadline != 'NULL'";
-            $result = mysqli_query($db,$sql);
+            $result = mysqli_query($db,$sql2);
+
             while($row=mysqli_fetch_assoc($result)){
           ?>
           <tr>
