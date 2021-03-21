@@ -70,11 +70,11 @@
           <tr>
             <th scope="row"><?php echo $rfp_id; ?></th>
             <td><?php echo $row['product_name']; ?></td>
-            <td><?php echo $row2['Vendor_ID']; ?></td>
+            <td><?php $vendorid= $row2['Vendor_ID']; echo $vendorid; ?></td>
             <td><?php echo $row4['Cost']; ?></td>
             <td>
                 <div style="text-align: center;">
-                  <button type="button" class="btn btn-success btn-sm" onclick="location.href='../../../backend-code/confirm.php'" >Confirm</button>
+                  <button type="button" class="btn btn-success btn-sm" onclick="location.href='../../../backend-code/confirm.php?rfp_id=<?php echo $rfp_id; ?>&&vendor_id=<?php echo $vendorid; ?>'" >Confirm</button>
                   <button type="button" class="btn btn-danger btn-sm" onclick="location.href='../../../backend-code/reject.php'" style="margin-left: 20px; ">Reject</button>
                 </div>
             </td>
