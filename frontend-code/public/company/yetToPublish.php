@@ -27,7 +27,10 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="acceptedrfp.php"> Accepted RFP </a>
-        </li>
+          </li>
+          <li class="nav-item">
+                <a class="nav-link" href="confirmedrfp.html"> Confirmed RFP </a>
+          </li>
   
         </ul>
   

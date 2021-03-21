@@ -13,7 +13,6 @@ body{
 {
 	width: 210px;
 	margin: 0 5%;
-	padding: 0 2%;
 	text-align: center;
 }
 .nav-item:hover
@@ -30,7 +29,7 @@ body{
 }
 .sign-out
 {
-	margin-left: 35%;
+	margin-left: 15%;
 	border-radius: 0.75em;
 }
 .contain{
