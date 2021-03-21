@@ -26,7 +26,7 @@
                 <a class="nav-link" href="acceptedrfp.php"> Accepted RFP </a>
             </li>
             <li class="nav-item active disabled">
-                <a class="nav-link" href="confirmedrfp.html"> Confirmed RFP </a>
+                <a class="nav-link" href="confirmedrfp.php"> Confirmed RFP </a>
             </li>
           </ul>
           <a href="../../../backend-code/signout.php" class="btn btn-outline-danger sign-out"> Sign out </a>
@@ -42,17 +42,41 @@
             <th scope="col">Product Name</th>
             <th scope="col">Vendor ID</th>
             <th scope="col">Cost/Unit</th>
-            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
-        
+        <?php 
+          require_once "../../../backend-code/config.php";
+          session_start();
+          $currentuser = $_SESSION['login_user'];
+          $sql1 = "SELECT ID FROM company WHERE Username='$currentuser'";
+          $result1 = mysqli_query($db,$sql1);
+          $row1 = mysqli_fetch_assoc($result1);
+          $companyid = $row1['ID'];
+          $sql="SELECT * FROM company_rfp WHERE Company_ID='$companyid'";
+          $result = mysqli_query($db,$sql);
+          while($row=mysqli_fetch_assoc($result)){
+              $rfp_id=$row['Rfp_ID'];
+              $sql2="SELECT * FROM vendor_rfp WHERE Rfp_ID='$rfp_id'";
+              $result2 = mysqli_query($db,$sql2);
+              while($row2=mysqli_fetch_assoc($result2)){
+                $res_id = $row2['Response_ID'];
+                $sql3="SELECT * FROM status WHERE Response_ID='$res_id'";
+                $result3 = mysqli_query($db,$sql3);
+                $row3=mysqli_fetch_assoc($result3);
+                $status = $row3['Status'];
+                if ($status=='Confirmed'){
+                  $sql4="SELECT * FROM rfp_status WHERE Response_ID='$res_id'";
+                $result4 = mysqli_query($db,$sql4);
+                $row4=mysqli_fetch_assoc($result4);
+        ?>
           <tr>
-            <th scope="row"></th>
-            <td></td>
-            <td></td>
-            <td></td>
+            <th scope="row"><?php echo $rfp_id; ?></th>
+            <td><?php echo $row['product_name']; ?></td>
+            <td><?php echo $row2['Vendor_ID']; ?></td>
+            <td><?php echo $row4['Cost']; ?></td>
           </tr>
+          <?php }}} ?>
         </tbody>
       </table>
     </div>

@@ -26,7 +26,7 @@
                 <a class="nav-link" href="acceptedrfp.php"> Accepted RFP </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="confirmedrfp.html"> Confirmed RFP </a>
+                <a class="nav-link" href="confirmedrfp.php"> Confirmed RFP </a>
             </li>
           </ul>
           <a href="../../../backend-code/signout.php" class="btn btn-outline-danger sign-out"> Sign out </a>
