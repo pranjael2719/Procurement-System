@@ -20,5 +20,7 @@
         $sql4 = "UPDATE company_rfp SET end_date = '$end' WHERE Rfp_ID='$id'";
         mysqli_query($db,$sql4);
     }
-    
+    $sql6 = "UPDATE status SET Status = 'Confirmed' WHERE Response_ID='$res_id'";
+    mysqli_query($db,$sql6);
+    header("location: ../frontend-code/public/company/acceptedrfp.php")
 ?>

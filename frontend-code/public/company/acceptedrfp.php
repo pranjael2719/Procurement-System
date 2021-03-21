@@ -75,7 +75,7 @@
             <td>
                 <div style="text-align: center;">
                   <button type="button" class="btn btn-success btn-sm" onclick="location.href='../../../backend-code/confirm.php?rfp_id=<?php echo $rfp_id; ?>&&vendor_id=<?php echo $vendorid; ?>'" >Confirm</button>
-                  <button type="button" class="btn btn-danger btn-sm" onclick="location.href='../../../backend-code/reject.php'" style="margin-left: 20px; ">Reject</button>
+                  <button type="button" class="btn btn-danger btn-sm" onclick="location.href='../../../backend-code/reject.php?rfp_id=<?php echo $rfp_id; ?>&&vendor_id=<?php echo $vendorid; ?>'" style="margin-left: 20px; ">Reject</button>
                 </div>
             </td>
           </tr>
