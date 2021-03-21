@@ -28,7 +28,8 @@
         <a href="../../../backend-code/signout.php" class="btn btn-outline-danger sign-out"> Sign out </a>
       </div>
     </nav>
-    <div class="contain">
+
+    <div style="margin: 10px 20px;">
       <table class="table table-striped">
         <thead class="thead-dark">
           <tr>
