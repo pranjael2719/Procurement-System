@@ -8,7 +8,7 @@ $row = mysqli_fetch_assoc($result);
 
 $currentStatus = $row['Status'];
 
-if($currentStatus!="Accepted"){
+if($currentStatus!="Accepted" or $currentStatus!="Rejected" or $currentStatus!="confirmed"){
 $sql = "UPDATE rfp_status SET Cost='$cost' WHERE Response_ID='$res_id'";
 mysqli_query($db,$sql);
 header("location: ../frontend-code/public/vendor/rfpstatus.php");
