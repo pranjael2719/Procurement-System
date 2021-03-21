@@ -9,6 +9,7 @@ session_start();
 <html>
     <head>
         <title> RFP Form</title>
+        <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="form.css">
     </head>
     <body>
